@@ -18,11 +18,21 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/', function () {
-    return view('bienvenido');
-})->name('ruta_inicio');
 
-Route::get('/productos', function () {
+
+/*Route::get('/', function () {
+    return view('bienvenido');
+})->name('ruta_inicio');*/
+
+
+Route::get('/', 'inicioController@showName');
+Route::get('/productos', 'productosController@showName')->middleware('adminis');
+Route::get('/contacto', 'contactoController@showName')->middleware('adminis');
+Route::get('/servicios', 'serviciosController@showName')->middleware('adminis');
+
+
+
+/*Route::get('/productos', function () {
     return view('productos');
 })->name('ruta_productos');
 
@@ -32,4 +42,4 @@ Route::get('/servicios', function () {
 
 Route::get('/contacto', function () {
     return view('contacto');
-})->name('ruta_contacto');
+})->name('ruta_contacto');*/
