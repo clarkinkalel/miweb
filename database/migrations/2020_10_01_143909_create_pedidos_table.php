@@ -17,7 +17,7 @@ class CreatePedidosTable extends Migration
             $table->bigIncrements('id');
             $table->text('carga');
             $table->string('nombre_envio');
-            $table->double('direccion_envio');
+            $table->string('direccion_envio');
             $table->text('ciudad_envio');
             $table->binary('codigo_postal_envio');
             $table->timestamps();
